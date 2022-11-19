@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.petdets{
+    width: 100vw;
+    height: 100vh;
+    /* padding: 20px 10px; */
+    /* background-color: red; */
+}
+
+.detform{
+    width: 60vw;
+    padding: 50px 30px;
+    border-radius: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.199);
+    /* background-color: red; */
+}
+
+.dethead{
+    width: 100vw;
+    height: 30vh;
+    /* background-color: red; */
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    /* justify-content: space-around; */
+}
+
+
+
+.detimg{
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    /* background-color: yellow; */
+}
+
+.dettxt{
+    width: 60%;
+    height: 100%;
+    /* background-color: yellow; */
+    /* color: #F27203; */
+}
+
+.dettxt h3{
+    color: #F27203;
+    font-size: 40px;
+}
+
+.detimg img{
+    object-fit: cover;
+    height: 100%;
+}
+
