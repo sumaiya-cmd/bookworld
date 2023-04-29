@@ -1,5 +1,5 @@
 
-import { ADMIN_REQUEST ,ADMIN_FAIL,ADMIN_SUCCESS,CREATE_ADMIN, UPDATE_PET,CHECK_ADMIN, CREATE_PET, CREATEPET_DETS ,REMOVE_ADMIN , DELETEPET } from "../ActionTypes";
+import { ADMIN_REQUEST ,ADMIN_FAIL,ADMIN_SUCCESS,CREATE_ADMIN, UPDATE_book,CHECK_ADMIN, CREATE_book, CREATEbook_DETS ,REMOVE_ADMIN , DELETEbook } from "../ActionTypes";
 
 export const loading = () =>(dispatch) =>{
     try {
@@ -58,14 +58,14 @@ export const loginadmin =(data) =>(dispatch , getstate) =>{
     }
 }
 
-export const createpets = (data) => (dispatch , getstate) =>{
+export const createbooks = (data) => (dispatch , getstate) =>{
     try {
         
-        let newdata =[...getstate().admin.pets, data]
-        localStorage.setItem('pets' , JSON.stringify(newdata))
+        let newdata =[...getstate().admin.books, data]
+        localStorage.setItem('books' , JSON.stringify(newdata))
 
         dispatch({
-            type:CREATE_PET ,
+            type:CREATE_book ,
             payload:newdata
         })
 
@@ -78,15 +78,15 @@ export const createpets = (data) => (dispatch , getstate) =>{
 
 }
 
-export const createpetdets = (data, index) => (dispatch, getstate) =>{
+export const createbookdets = (data, index) => (dispatch, getstate) =>{
     try {
         
-        let newdata = [...getstate().admin.pets , data];
-        getstate().admin.pets[index] = newdata 
-        localStorage.setItem('pets' , JSON.stringify(newdata))
+        let newdata = [...getstate().admin.books , data];
+        getstate().admin.books[index] = newdata 
+        localStorage.setItem('books' , JSON.stringify(newdata))
 
         dispatch({
-            type: CREATEPET_DETS ,
+            type: CREATEbook_DETS ,
             payload:newdata
         })
     } 
@@ -101,14 +101,14 @@ export const createpetdets = (data, index) => (dispatch, getstate) =>{
 export const  updateblog =(data) => (dispatch , getstate) =>{
     try {
         
-        let index = getstate().admin.pets.findIndex(e => e.id=== data.id) 
-        const copydata = [...getstate().admin.pets]
+        let index = getstate().admin.books.findIndex(e => e.id=== data.id) 
+        const copydata = [...getstate().admin.books]
         copydata[index] = data ;
 
-        localStorage.setItem('pets' ,JSON.stringify(copydata))
+        localStorage.setItem('books' ,JSON.stringify(copydata))
 
         dispatch({
-            type:UPDATE_PET,
+            type:UPDATE_book,
             payload:copydata
         })
 
@@ -134,16 +134,16 @@ export const removeadmin =() => (dispatch) =>{
     }
 }
 
-export const deletepet =(id)=> (dispatch , getstate) =>{
+export const deletebook =(id)=> (dispatch , getstate) =>{
     try {
         
-        let b = getstate().admin.pets.filter((e )=>{
+        let b = getstate().admin.books.filter((e )=>{
             return e.id !== id
         })
-        localStorage.setItem('pets', JSON.stringify(b));
+        localStorage.setItem('books', JSON.stringify(b));
 
         dispatch({
-            type:DELETEPET,
+            type:DELETEbook,
             payload : b
         })
 

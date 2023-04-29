@@ -3,9 +3,9 @@ import Register from './Register';
 import  Login  from "./Login.js";
 import { Route , Routes } from 'react-router-dom';
 import Dashboard from "./dashboard/dashboard";
-import AddPets from "./addpet.js";
+import Addbooks from "./addbook.js";
 import Update from "./Update.js";
-import Petdetails from "./petdetails.js";
+import Bookdetails from "./bookdetails";
 
 const App = () => {
   return (
@@ -14,10 +14,10 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Register />}></Route>
         <Route path='/login' element={<Login/>} ></Route>
-        <Route path='/addpets/:loginuser' element={<AddPets/>} ></Route>
+        <Route path='/addbooks/:loginuser' element={<Addbooks/>} ></Route>
         <Route path='/dashboard' element={<Dashboard /> }></Route>
         <Route path='/Update/:id' element={<Update/>} />
-        <Route path='/petdetails/:petid' element={<Petdetails /> }></Route>
+        <Route path='/bookdetails/:bookid' element={<Bookdetails /> }></Route>
       </Routes>
 
     </div>

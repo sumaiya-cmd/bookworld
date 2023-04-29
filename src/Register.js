@@ -37,7 +37,7 @@ const Register = () => {
         </div>
         <div className="right">
             
-                <h1>Welcome to my animal world</h1>
+                <h1>World Of Books</h1>
             
             <div className="rform">
             <form onSubmit={submithandler} className='container'>

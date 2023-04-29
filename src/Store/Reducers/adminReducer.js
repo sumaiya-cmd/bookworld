@@ -2,15 +2,15 @@ import {
     ADMIN_FAIL,
     ADMIN_SUCCESS, ADMIN_REQUEST,
     CREATE_ADMIN, CHECK_ADMIN,
-    CREATE_PET, UPDATE_PET, CREATEPET_DETS,
-    REMOVE_ADMIN , DELETEPET
+    CREATE_book, UPDATE_book, CREATEbook_DETS,
+    REMOVE_ADMIN , DELETEbook
 } from "../ActionTypes";
 
 const initstate = {
     loading: false,
     error: null,
     admindetails: [],
-    pets: [],
+    books: [],
     logindetails: null
 }
 
@@ -47,23 +47,23 @@ const adminReducer = (state = initstate, { type, payload }) => {
                 logindetails: payload
             }
 
-        case CREATE_PET:
+        case CREATE_book:
             return {
                 ...state,
-                pets: payload
+                books: payload
             }
 
-        case CREATEPET_DETS:
+        case CREATEbook_DETS:
             return {
                 ...state,
-                pets: payload
+                books: payload
             }
 
-        case UPDATE_PET:
-        case DELETEPET :    
+        case UPDATE_book:
+        case DELETEbook :    
             return {
                 ...state,
-                pets: payload
+                books: payload
             }
 
         case REMOVE_ADMIN:

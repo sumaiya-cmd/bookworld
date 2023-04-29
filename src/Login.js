@@ -37,7 +37,7 @@ const Login = () => {
             </div>
             <div className="lright">
 
-                <h1>Welcome to my animal world</h1>
+                <h1>World Of Books</h1>
                 <div className="lform">
                     <form onSubmit={submithandler} className='container'>
                         <h2>Login here</h2>
